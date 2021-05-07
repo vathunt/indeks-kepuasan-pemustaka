@@ -5,7 +5,7 @@
 }
 
 body {
-	margin: 0 0 100px;
+	margin: 0 0 150px;
 	font-family: "Quicksand", sans-serif;
 	background: #ebebeb;
 	min-height: 400px;
@@ -53,14 +53,14 @@ span {
 {
 	margin:0
 }
-@media (max-width:991px)
+@media (max-width: 991px)
 {
 	.site-footer [class^=col-]
 	{
 		margin-bottom:30px
 	}
 }
-@media (max-width:767px)
+@media (max-width: 767px)
 {
 	.site-footer
 	{
@@ -69,5 +69,15 @@ span {
 	.site-footer .copyright-text,.site-footer .social-icons
 	{
 		text-align:center
+	}
+}
+@media (max-width: 460px) {
+	.navbar-brand {
+		padding-top: .3125rem;
+		padding-bottom: .3125rem;
+		margin-right: 1rem;
+		font-size: 1.25rem;
+		text-decoration: none;
+		white-space: normal;
 	}
 }
