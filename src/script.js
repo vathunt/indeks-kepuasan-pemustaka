@@ -13,6 +13,8 @@ let satisfied        = document.getElementById('satisfied')
 let notSatisfied     = document.getElementById('notSatisfied')
 let veryDissatisfied = document.getElementById('veryDissatisfied')
 
+let feedback = ''
+
 if (localStorage.getItem("numVsVotes")) {
   numVsVotes = localStorage.getItem("numVsVotes")
   vsVotes.innerHTML = `${numVsVotes}`
@@ -42,23 +44,42 @@ function votes(reaction) {
   switch(reaction) {
     case 1:
     numVdVotes++;
+    feedback = 'Sangat Tidak Puas';
     localStorage.setItem("numVdVotes", numVdVotes);
     vdVotes.innerHTML= `${numVdVotes}`;
     break;
     case 2:
     numNsVotes++;
+    feedback = 'Tidak Puas';
     localStorage.setItem("numNsVotes", numNsVotes);
     nsVotes.innerHTML= `${numNsVotes}`;
     break;
     case 3:
     numSVotes++;
+    feedback = 'Puas';
     localStorage.setItem("numSVotes", numSVotes);
     sVotes.innerHTML= `${numSVotes}`;
     break;
     case 4:
     numVsVotes++;
+    feedback = 'Sangat Puas';
     localStorage.setItem("numVsVotes", numVsVotes);
     vsVotes.innerHTML= `${numVsVotes}`;
     break;
+  }
+
+  if (feedback) {
+    Swal.fire({
+      icon: 'success',
+      title: `Terimakasih!<br /> Anda Memberikan Feedback <strong>${feedback.toUpperCase()}</strong>`,
+      showConfirmButton: false,
+      showClass: {
+        popup: 'animate__animated animate__zoomInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__backOutDown'
+      },
+      timer: 2000
+    })
   }
 }
