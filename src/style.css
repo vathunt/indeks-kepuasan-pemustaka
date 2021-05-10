@@ -22,6 +22,11 @@ body {
 	filter: drop-shadow(5px 3px 5px rgba(250, 250, 62, 0.5));
 }
 
+.gambar:hover {
+	animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  	animation-duration: 2s; /* don't forget to set a duration! */
+}
+
 span {
 	cursor: pointer;
 }

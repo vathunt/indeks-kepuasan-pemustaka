@@ -71,15 +71,15 @@ function votes(reaction) {
   if (feedback) {
     Swal.fire({
       icon: 'success',
-      title: `Terimakasih!<br /> Anda Memberikan Feedback <strong>${feedback.toUpperCase()}</strong>`,
+      title: `Terimakasih!<br /> Anda Memberikan Feedback <br /><strong>${feedback.toUpperCase()}</strong>`,
       showConfirmButton: false,
-      showClass: {
-        popup: 'animate__animated animate__zoomInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__backOutDown'
-      },
-      timer: 2000
+      // showClass: {
+      //   popup: 'animate__animated animate__zoomInDown'
+      // },
+      // hideClass: {
+      //   popup: 'animate__animated animate__backOutDown'
+      // },
+      timer: 2500
     })
   }
 }
